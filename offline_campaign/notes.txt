@@ -1,0 +1,15 @@
+1. Create a job to execute the python management command offline_campaign
+2. Create a jenkins job that will execute the above job with some param options
+3. Update the offline_campaign script to have some s3 bucket downloading and uploading
+
+1. Create a job to execute the python management command offline_campaign
+- Use the example in hello_world folder
+
+cat offline_campaign_job.yaml | sed 's/#!IMAGE_VALUE!#/hello-world:latest/g' |  sed 's/#!REASON!#/offline_campaign launch/g' | sed 's/#!FILE_NAME!#/cs.txt/g' | kubectl apply -f -
+
+2. Create a jenkins job to execute above k8 job
+
+
+
+offline_campaign script work
+Saved working directory and index state WIP on rc: 95bcac4d7 Fix a bug on RiskPlatformClient

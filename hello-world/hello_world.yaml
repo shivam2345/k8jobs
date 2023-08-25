@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hello-world-job
+spec:
+  # ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+      - name: hello-world-job
+        image: "#!IMAGE_VALUE!#"
+        imagePullPolicy: Never
+        command: ["/bin/bash"]
+        args:
+        - -c
+        - python -m hello_world --reason "#!FILE_NAME!#" --file_name "#!FILE_NAME!#"
+      restartPolicy: Never
+  backoffLimit: 0

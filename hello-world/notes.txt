@@ -1,0 +1,7 @@
+cat hello_world.yaml | sed 's/#!IMAGE_VALUE!#/hello-world:latest/g' |  sed 's/#!FILE_NAME!#/cs.txt/g' | kubectl apply -f -
+
+
+
+docker build -t hello-world -f ./Dockerfile .
+minikube image ls --format table
+
